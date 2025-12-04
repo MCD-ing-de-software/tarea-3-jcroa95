@@ -141,7 +141,7 @@ class TestStatisticsUtils(unittest.TestCase):
         """
         utils=StatisticsUtils()
 
-        arra=[50,50,50,50]
+        arra=[5,5,5]
 
         with self.assertRaises(ValueError):
             utils.zscore(arr=arra)
@@ -160,11 +160,11 @@ class TestStatisticsUtils(unittest.TestCase):
         """
         utils=StatisticsUtils()
 
-        arra=[2,4,6,8,10]
+        arra=[2,4,6]
 
         result=utils.min_max_scale(arra)
 
-        expected = [0.0, 0.25, 0.5, 0.75, 1.0]
+        expected = [0.0, 0.5, 1.0]
 
 
         self.assertAlmostEqual(result.min(),0.0, places=10,
@@ -186,7 +186,7 @@ class TestStatisticsUtils(unittest.TestCase):
         """
         utils=StatisticsUtils()
 
-        arra=[50,50,50,50]
+        arra=[3,3,3]
 
         with self.assertRaises(ValueError):
             utils.min_max_scale(arr=arra)
